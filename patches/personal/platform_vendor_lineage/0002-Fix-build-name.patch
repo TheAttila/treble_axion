@@ -1,0 +1,25 @@
+From 01811f697e0fab22011b2388af047a7b53d9429e Mon Sep 17 00:00:00 2001
+From: TheAttila <417474696C61@gmail.com>
+Date: Mon, 15 Apr 2024 09:30:36 -0300
+Subject: [PATCH 2/2] Fix build name
+
+---
+ config/version.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/config/version.mk b/config/version.mk
+index f45ce38..bb3ea2e 100644
+--- a/config/version.mk
++++ b/config/version.mk
+@@ -28,7 +28,7 @@ else
+ AXION_BUILD_VARIANT := VANILLA
+ endif
+ 
+-LINEAGE_VERSION_SUFFIX := $(LINEAGE_BUILD_DATE)-$(LINEAGE_BUILDTYPE)-$(AXION_BUILD_VARIANT)-$(LINEAGE_BUILD)
++LINEAGE_VERSION_SUFFIX := $(LINEAGE_BUILD_DATE)-$(LINEAGE_BUILDTYPE)-$(AXION_BUILD_VARIANT)-treble
+ 
+ # Internal version
+ LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(PRODUCT_RELEASE_TYPE)-$(LINEAGE_VERSION_SUFFIX)
+-- 
+2.49.0
+

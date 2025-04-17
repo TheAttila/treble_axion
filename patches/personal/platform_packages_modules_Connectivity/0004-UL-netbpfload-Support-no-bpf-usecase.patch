@@ -1,0 +1,25 @@
+From 0d8547ae2245e2f61d8597523b2ca62fa23ca1e0 Mon Sep 17 00:00:00 2001
+From: khalvat-M <mmba313@gmail.com>
+Date: Thu, Jun 27 02:17:11 2024 +0330
+Subject: [PATCH 04/06] [UL] netbpfload: Support no-bpf usecase
+
+---
+ bpf/loader/NetBpfLoad.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bpf/loader/NetBpfLoad.cpp b/bpf/loader/NetBpfLoad.cpp
+index 2ef94eb..3adcfc5 100644
+--- a/bpf/loader/NetBpfLoad.cpp
++++ b/bpf/loader/NetBpfLoad.cpp
+@@ -1614,7 +1614,7 @@ static int doLoad(char** argv, char * const envp[]) {
+     //  which could otherwise fail with ENOENT during object pinning or renaming,
+     //  due to ordering issues)
+     for (const auto& location : locations) {
+-        if (createSysFsBpfSubDir(location.prefix)) return 1;
++        if (createSysFsBpfSubDir(location.prefix)) failed = true;
+     }
+ 
+     // Note: there's no actual src dir for fs_bpf_loader .o's,
+-- 
+2.49.0
+

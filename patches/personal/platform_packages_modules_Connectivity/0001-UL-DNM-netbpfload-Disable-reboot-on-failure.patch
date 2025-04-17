@@ -1,0 +1,23 @@
+From 35e56f6dff16846c707e375e0e8cf4c16c0f0bcc Mon Sep 17 00:00:00 2001
+From: khalvat-M <mmba313@gmail.com>
+Date: Thu, 27 Jun 2024 02:17:11 +0330
+Subject: [PATCH 01/9] [UL] [DNM] netbpfload: Disable reboot on failure
+
+---
+ bpf/loader/netbpfload.rc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bpf/loader/netbpfload.rc b/bpf/loader/netbpfload.rc
+index 10bfbb2..02636f5 100644
+--- a/bpf/loader/netbpfload.rc
++++ b/bpf/loader/netbpfload.rc
+@@ -65,5 +65,5 @@ service bpfloader /system/bin/false
+     #    'cannot prove return value is 0 or 1' or 'unsupported / unknown operation / helper',
+     #    'invalid bpf_context access', etc.
+     #
+-    reboot_on_failure reboot,netbpfload-missing
++    #reboot_on_failure reboot,netbpfload-missing
+     updatable
+-- 
+2.49.0
+
